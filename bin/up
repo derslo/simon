@@ -8,7 +8,7 @@ source .env
 
 if [ $APP_ENV == "local" ]
 then
-    docker-compose -f docker-compose.local.yml  up -d web app
+    docker-compose -f docker-compose.local.yml  up -d simon_web simon_app
 else
-    docker-compose -f docker-compose.production.yml up -d web app
+    docker-compose -f docker-compose.production.yml up -d simon_web simon_app
 fi

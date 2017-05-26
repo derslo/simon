@@ -17,5 +17,5 @@ services:
     simon_composer:
         image: composer/composer
         volumes_from: 
-            - web
+            - simon_web
         working_dir: /var/www
