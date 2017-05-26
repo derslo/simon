@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+cd "${BASH_SOURCE%/*}/.." || exit
+
+source .env
+
+if [ $APP_ENV == "local" ]
+then
+    docker-compose -f docker-compose.local.yml  up -d web app
+else
+    docker-compose -f docker-compose.production.yml up -d web app
+fi
