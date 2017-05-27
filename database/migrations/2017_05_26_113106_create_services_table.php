@@ -19,7 +19,7 @@ class CreateServicesTable extends Migration
             $table->string('url');
             $table->string('admin_url');
             $table->text('description');
-            $table->integer('contact_id');
+            $table->integer('contact_id')->nullable();
             $table->boolean('public');
             $table->integer('server_id');
             $table->timestamps();

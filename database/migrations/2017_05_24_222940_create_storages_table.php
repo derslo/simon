@@ -18,8 +18,8 @@ class CreateStoragesTable extends Migration
             $table->integer('amount');
             $table->enum('unit',['GB', 'TB', 'PB']);
             $table->enum('type', ['HD', 'SSD']);
-            $table->boolean('raid');
-            $table->string('raid_level');
+            $table->boolean('raid')->nullable();
+            $table->string('raid_level')->nullable();
             $table->timestamps();
         });
     }

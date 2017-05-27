@@ -54,6 +54,7 @@ class ServiceCrudController extends CrudController
                 'name'  => 'url',
                 'label' => "Adresse",
                 'type'  => 'url',
+                'placeholder' => 'https://my.service.net'
             ]
         );
 

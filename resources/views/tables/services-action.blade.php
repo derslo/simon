@@ -1,4 +1,4 @@
-<a href="{{ route('welcome.service.show', $id) }}" class="btn btn-xs btn-primary">
+<a href="{{ route('home.service.show', $id) }}" class="btn btn-xs btn-primary">
     Anzeigen
 </a>
 <a href="{{ $url }}" class="btn btn-xs btn-info" target="_blank">

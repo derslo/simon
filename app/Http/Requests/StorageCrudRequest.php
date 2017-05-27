@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Backpack\CRUD\app\Http\Requests\CrudRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class StorageCrudRequest extends CrudRequest
 {
@@ -26,8 +27,15 @@ class StorageCrudRequest extends CrudRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5|max:255',
-            'email' => 'email',
+            'amount' => 'required|integer',
+            'unit'   => [
+                'required',
+                Rule::in(['GB', 'TB', 'PB']),
+            ],
+            'type'   => [
+                'required',
+                Rule::in(['HD', 'SDD']),
+            ],
         ];
     }
 }

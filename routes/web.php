@@ -10,15 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'WelcomeController@index')->name('welcome');
-Route::get('/server/datatable', 'WelcomeController@serverDatatable')->name('welcome.server.datatable');
-Route::get('/server/{id}', 'WelcomeController@showServer')->name('welcome.server.show');
-Route::get('/service/datatable', 'WelcomeController@serviceDatatable')->name('welcome.service.datatable');
-Route::get('/service/{id}', 'WelcomeController@showService')->name('welcome.service.show');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/server/datatable', 'HomeController@serverDatatable')->name('home.server.datatable');
+Route::get('/server/{server}', 'HomeController@showServer')->name('home.server.show');
+Route::get('/service/datatable', 'HomeController@serviceDatatable')->name('home.service.datatable');
+Route::get('/service/{service}', 'HomeController@showService')->name('home.service.show');
 
 // Admin Interface Routes
 Route::group(
@@ -32,7 +28,5 @@ Route::group(
         CRUD::resource('contact', 'Admin\ContactCrudController');
         CRUD::resource('os', 'Admin\OsCrudController');
         CRUD::resource('storage', 'Admin\StorageCrudController');
-
-
     }
 );

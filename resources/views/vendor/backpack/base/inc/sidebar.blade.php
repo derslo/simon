@@ -23,8 +23,6 @@
                     <a href="#"><i class="fa fa-bars"></i> <span>Stammdaten</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/server') }}"><i
-                                        class="fa fa-server"></i> <span>Server</span></a></li>
                         <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/location') }}"><i
                                         class="fa fa-building"></i> <span>Standorte</span></a></li>
                         <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/organisation') }}"><i
