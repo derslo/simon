@@ -28,14 +28,6 @@ class StorageCrudRequest extends CrudRequest
     {
         return [
             'amount' => 'required|integer',
-            'unit'   => [
-                'required',
-                Rule::in(['GB', 'TB', 'PB']),
-            ],
-            'type'   => [
-                'required',
-                Rule::in(['HD', 'SDD']),
-            ],
         ];
     }
 }

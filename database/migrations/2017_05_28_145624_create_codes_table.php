@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStoragesTable extends Migration
+class CreateCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateStoragesTable extends Migration
      */
     public function up()
     {
-        Schema::create('storages', function (Blueprint $table) {
+        Schema::create('codes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('amount');
-            $table->integer('unit_id');
-            $table->integer('type_id');
-            $table->boolean('raid')->nullable();
-            $table->string('raid_level')->nullable();
+            $table->string('value');
+            $table->string('type');
             $table->timestamps();
 
+            $table->unique(['value', 'type']);
         });
     }
 
@@ -32,6 +30,6 @@ class CreateStoragesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('storages');
+        Schema::dropIfExists('codes');
     }
 }

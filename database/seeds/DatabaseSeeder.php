@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(CodeSeeder::class);
 
         if(env('APP_ENV') != 'production') {
             $this->call(ServiceSeeder::class);

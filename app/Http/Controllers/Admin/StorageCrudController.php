@@ -39,37 +39,30 @@ class StorageCrudController extends CrudController
         );
 
         /**
-         * Insert an Radio-Field for Unit
+         * Insert an Select2 Field for Unit
          */
         $this->crud->addField(
             [
-                'name'    => 'unit', // the name of the db column
-                'label'   => 'Einheit', // the input label
-                'type'    => 'radio',
-                'options' => [ // the key will be stored in the db, the value will be shown as label;
-                    'PB' => "PB",
-                    'TB' => "TB",
-                    'GB' => "GB",
-                ],
-                // optional
-                'inline'  => true, // show the radios all on the same line?
+                'type'      => 'select2',
+                'name'      => 'unit_id', // the db column for the foreign key
+                'entity'    => 'unit', // the method that defines the relationship in your Model
+                'attribute' => 'value', // foreign key attribute that is shown to user
+                'model'     => "App\Models\StorageUnit", // foreign key model
+                'label'     => "Unit",
             ]
         );
 
         /**
-         * Insert an Radio-Field for Type
+         * Insert an Select2 Field for Type
          */
         $this->crud->addField(
             [
-                'name'    => 'type', // the name of the db column
-                'label'   => 'Typ', // the input label
-                'type'    => 'radio',
-                'options' => [ // the key will be stored in the db, the value will be shown as label;
-                    'TB' => "TB",
-                    'GB' => "GB",
-                ],
-                // optional
-                'inline'  => true, // show the radios all on the same line?
+                'type'      => 'select2',
+                'name'      => 'type_id', // the db column for the foreign key
+                'entity'    => 'type', // the method that defines the relationship in your Model
+                'attribute' => 'value', // foreign key attribute that is shown to user
+                'model'     => "App\Models\StorageType", // foreign key model
+                'label'     => "Type",
             ]
         );
 
