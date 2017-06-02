@@ -43,17 +43,19 @@ class HomeController extends Controller
 
     public function showServer(Server $server)
     {
-        if(\Auth::guest() && !$server->public){
+        if (\Auth::guest() && !$server->public) {
             return abort(403);
         }
+
         return $server;
     }
 
     public function showService(Service $service)
     {
-        if(\Auth::guest() && !$service->public){
+        if (\Auth::guest() && !$service->public) {
             return abort(403);
         }
-        return $service;
+
+        return view('home.service', ['service' => $service]);
     }
 }

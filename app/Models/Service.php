@@ -22,12 +22,12 @@ class Service extends Model
 
     public function contact()
     {
-        $this->belongsTo(Contact::class);
+        return $this->belongsTo(Contact::class);
     }
 
     public function server()
     {
-        $this->belongsTo(Server::class);
+        return $this->belongsTo(Server::class);
     }
 
     public function getLink()

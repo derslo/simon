@@ -19,12 +19,12 @@ class Contact extends Model
 
     public function organisation()
     {
-        $this->belongsTo(Organisation::class);
+        return $this->belongsTo(Organisation::class);
     }
 
     public function servers()
     {
-        $this->hasMany(Server::class);
+        return $this->hasMany(Server::class);
     }
 
     public function getFormNameAttribute()

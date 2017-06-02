@@ -173,6 +173,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -210,7 +211,7 @@ return [
         'Config'       => Illuminate\Support\Facades\Config::class,
         'Cookie'       => Illuminate\Support\Facades\Cookie::class,
         'Crypt'        => Illuminate\Support\Facades\Crypt::class,
-        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Datatables'   => Yajra\Datatables\Facades\Datatables::class,
         'DB'           => Illuminate\Support\Facades\DB::class,
         'Debugbar'     => Barryvdh\Debugbar\Facade::class,
         'Eloquent'     => Illuminate\Database\Eloquent\Model::class,
@@ -221,6 +222,7 @@ return [
         'Lang'         => Illuminate\Support\Facades\Lang::class,
         'Log'          => Illuminate\Support\Facades\Log::class,
         'Mail'         => Illuminate\Support\Facades\Mail::class,
+        'Markdown'     => 'GrahamCampbell\Markdown\Facades\Markdown',
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password'     => Illuminate\Support\Facades\Password::class,
         'Queue'        => Illuminate\Support\Facades\Queue::class,
