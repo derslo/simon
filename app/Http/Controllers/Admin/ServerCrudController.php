@@ -45,6 +45,17 @@ class ServerCrudController extends CrudController
             ]
         );
 
+        /**
+         * Insert Markdown Editor for Description
+         */
+        $this->crud->addField(
+            [
+                'name'  => 'description',
+                'label' => 'Beschreibung',
+                'tab'   => 'Allgemein',
+                'type'  => 'simplemde',
+            ]
+        );
 
         $this->crud->addField(
             [

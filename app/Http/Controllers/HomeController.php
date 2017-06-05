@@ -28,12 +28,16 @@ class HomeController extends Controller
             ->make(true);
     }
 
-    public function serviceDatatable(Datatables $datatables)
+    public function serviceDatatable(Datatables $datatables, Server $server)
     {
         $builder = Service::query();
 
         if (\Auth::guest()) {
             $builder->where('public', true);
+        }
+
+        if($server->id > 0){
+            $builder->where('server_id', $server->id);
         }
 
         return $datatables->eloquent($builder)
@@ -47,7 +51,7 @@ class HomeController extends Controller
             return abort(403);
         }
 
-        return $server;
+        return view('home.server', ['server' => $server]);
     }
 
     public function showService(Service $service)

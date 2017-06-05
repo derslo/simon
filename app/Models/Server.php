@@ -25,12 +25,12 @@ class Server extends Model
 
     public function location()
     {
-        $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class);
     }
 
     public function contact()
     {
-        $this->belongsTo(Contact::class);
+        return $this->belongsTo(Contact::class);
     }
 
     public function getLocationName()
@@ -40,12 +40,12 @@ class Server extends Model
 
     public function os()
     {
-        $this->belongsTo(Os::class);
+        return $this->belongsTo(Os::class);
     }
 
     public function storage()
     {
-        $this->belongsTo(Storage::class);
+        return $this->belongsTo(Storage::class);
     }
 
 }

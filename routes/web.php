@@ -13,7 +13,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/server/datatable', 'HomeController@serverDatatable')->name('home.server.datatable');
 Route::get('/server/{server}', 'HomeController@showServer')->name('home.server.show');
-Route::get('/service/datatable', 'HomeController@serviceDatatable')->name('home.service.datatable');
+Route::get('/service/datatable/{server?}', 'HomeController@serviceDatatable')->name('home.service.datatable');
 Route::get('/service/{service}', 'HomeController@showService')->name('home.service.show');
 
 // Admin Interface Routes
