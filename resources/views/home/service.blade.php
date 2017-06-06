@@ -14,6 +14,10 @@
                         @else
                             <span class="label label-danger">private</span>
                         @endif
+                        <span class="pull-right">
+                        <a href="{{ url('/admin/service/'.$service->id.'/edit') }}" class="btn btn-xs btn-info">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Bearbeiten</a>
+                        </span>
                     </div>
 
                     <div class="panel-body">
@@ -81,36 +85,31 @@
                                 </div><!--row-->
 
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4>Ansprechpartner</h4>
-                                            </div><!--panel-heading-->
+                                    @if($service->contact)
+                                        <div class="col-md-6">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4>Ansprechpartner</h4>
+                                                </div><!--panel-heading-->
 
-                                            <div class="panel-body">
-                                                <ul>
-                                                    <li>{{ $service->contact->organisation->name }}</li>
-                                                    <li>{{ $service->contact->name }}</li>
-                                                    <li>{{ $service->contact->email }}</li>
-                                                    <li>{{ $service->contact->mobile }}</li>
-                                                </ul>
-                                            </div><!--panel-body-->
-                                        </div><!--panel-->
-                                    </div><!--col-md-6-->
-
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        <li>{{ $service->contact->organisation->name }}</li>
+                                                        <li>{{ $service->contact->name }}</li>
+                                                        <li>{{ $service->contact->email }}</li>
+                                                        <li>{{ $service->contact->mobile }}</li>
+                                                    </ul>
+                                                </div><!--panel-body-->
+                                            </div><!--panel-->
+                                        </div><!--col-md-6-->
+                                    @endif
 
                                 </div><!--row-->
-
                             </div><!--col-md-8-->
-
                         </div><!--row-->
-
                     </div><!--panel body-->
-
                 </div><!-- panel -->
-
             </div><!-- col-md-10 -->
-
         </div><!-- row -->
     </div>
 @endsection

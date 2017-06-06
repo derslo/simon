@@ -12,6 +12,10 @@
                         @else
                             <span class="label label-danger">private</span>
                         @endif
+                        <span class="pull-right">
+                        <a href="{{ url('/admin/server/'.$server->id.'/edit') }}" class="btn btn-xs btn-info">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Bearbeiten</a>
+                        </span>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -29,6 +33,7 @@
                                     </div><!--col-md-6-->
                                 </div><!--row-->
                                 <div class="row">
+                                    @if($server->contact)
                                     <div class="col-md-6">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
@@ -44,6 +49,7 @@
                                             </div><!--panel-body-->
                                         </div><!--panel-->
                                     </div><!--col-md-6-->
+                                    @endif
                                     <div class="col-md-6">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
@@ -78,10 +84,10 @@
                                             </div><!--panel-heading-->
                                             <div class="panel-body">
                                                 <ul>
-                                                    <li>Betriebssystem: {{ $server->os->name }}</li>
+                                                    @if($server->os)<li>Betriebssystem: {{ $server->os->name }}</li>@endif
                                                     <li>Prozessoren: {{ $server->cores }}</li>
                                                     <li>RAM: {{ $server->ram }} GB</li>
-                                                    <li>Storage: {{ $server->storage->form_name }}</li>
+                                                    @if($server->storage)<li>Storage: {{ $server->storage->form_name }}</li>@endif
                                                 </ul>
                                             </div><!--panel-body-->
                                         </div><!--panel-->

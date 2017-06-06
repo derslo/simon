@@ -21,6 +21,8 @@ class Server extends Model
         'ram',
         'cores',
         'storage_id',
+        'ipV4',
+        'ipV6'
     ];
 
     public function location()
